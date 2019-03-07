@@ -1,0 +1,277 @@
+<!DOCTYPE HTML>
+<!--
+  Paradigm Shift by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>Pictionary</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="icon" href="../img/favicon.png" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="../styles/arcania.css" />
+  </head>
+  <body class="is-preload">
+
+    <style type="text/css">
+      
+            #wrapper:before {
+      background-attachment: fixed;
+      background-color: #4fce43;
+      background-position: -50% 10%;
+      background-repeat: repeat-y;
+      background-size: 75% auto;
+      content: '';
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 50vw;
+      z-index: -1;
+    }
+
+
+@media screen and (max-width: 1152px) {
+
+      #wrapper {
+        padding: 0;
+      }
+
+        #wrapper:before {
+          display: none;
+        }
+
+        #wrapper section {
+          grid-template-areas: "header" "content" "footer";
+          grid-template-columns: 1fr;
+          grid-template-rows: 3fr;
+        }
+
+          #wrapper section > header {
+            justify-self: start;
+            padding: 0;
+            text-align: left;
+            width: 100%;
+          }
+
+            #wrapper section > header ul.actions {
+              justify-content: flex-start;
+            }
+
+          #wrapper section > .content {
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+          }
+
+          #wrapper section > footer {
+            padding: 0;
+            text-align: left;
+          }
+
+            #wrapper section > footer ul.actions {
+              justify-content: flex-start;
+            }
+
+        #wrapper > section {
+          margin: 0;
+        }
+
+          #wrapper > section > header {
+            background-attachment: fixed;
+            background-color: #4fce43;
+            background-position: 25% 50%;
+            background-repeat: repeat-y;
+            background-size: 40rem auto;
+          }
+
+            #wrapper > section > header > * {
+              max-width: 25rem;
+            }
+
+            #wrapper > section > header > :last-child {
+              margin-bottom: 0;
+            }
+
+            #wrapper > section > header:before {
+              display: none;
+            }
+
+            #wrapper > section > header h1:before, #wrapper > section > header h2:before {
+              display: none;
+            }
+
+            #wrapper > section > header h1:after, #wrapper > section > header h2:after {
+              display: none;
+            }
+
+          #wrapper > section > .content > :last-child {
+            margin-bottom: 0;
+          }
+
+          #wrapper > section > .content > section {
+            left: 0;
+          }
+
+            #wrapper > section > .content > section:first-child {
+              margin-top: 0;
+            }
+
+            #wrapper > section > .content > section > header {
+              width: 100%;
+            }
+
+            #wrapper > section > .content > section:last-child {
+              margin-bottom: 0;
+            }
+
+          #wrapper > section > footer > :last-child {
+            margin-bottom: 0;
+          }
+
+          #wrapper > section.intro {
+            margin-bottom: 0;
+          }
+
+            #wrapper > section.intro > header {
+              margin-bottom: 0;
+            }
+
+              #wrapper > section.intro > header ul.actions {
+                display: none;
+              }
+
+              #wrapper > section.intro > header > * {
+                margin-left: 0;
+                margin-right: 0;
+                width: 100%;
+              }
+
+              #wrapper > section.intro > header > ul.actions {
+                margin-left: -1rem;
+              }
+
+              #wrapper > section.intro > header:before {
+                margin-left: 0;
+              }
+
+          #wrapper > section:last-of-type > header:after {
+            display: none;
+          }
+
+        #wrapper .copyright {
+          left: 0;
+          width: 100%;
+        }
+
+        #wrapper section {
+          margin: 6rem 0 0 0;
+        }
+
+        #wrapper > section {
+          margin: 0;
+        }
+
+          #wrapper > section > header {
+            padding: 4rem 4rem;
+          }
+
+          #wrapper > section > .content {
+            padding: 4rem 4rem;
+          }
+
+            #wrapper > section > .content > section {
+              margin: 4rem 0;
+            }
+
+          #wrapper > section > footer {
+            padding: 0 4rem 4rem 4rem;
+          }
+
+          #wrapper > section.intro > header {
+            padding: 8rem 4rem 5rem 4rem;
+          }
+
+        #wrapper .copyright {
+          padding: 0 4rem 4rem 4rem;
+        }
+
+    }
+
+
+
+    </style>
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+        <!-- Intro -->
+          <section class="intro">
+            <header>
+              <h2 style="font-size:30px;">PICTIONARY</h2>
+              <h2>Pick <br>Read <br>Draw <br>Guess</h2>
+              <ul class="actions" >
+                <li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+              </ul>
+            </header>
+            <div class="content">
+              <span  class="image fill" data-position="center"><img src="../img/arcania.jpg" alt="" /></span>
+            </div>
+          </section>
+
+          <section>
+            <header>
+              <h2>Details</h2>
+            </header>
+            <div class="content">
+              <p><strong>Venue : </strong>5th floor Old Building</p>
+              <p><strong>Participants :</strong> 3 per team.</p>
+              <p><strong>Registration fee :</strong>Rs 150/- per team.</p>
+              <p><strong>Date and Time :</strong></p>
+              </div>
+          </section>
+        <!-- Section -->
+          <section id="first">
+            <header>
+              <h2>Rules & Regulations</h2>
+            </header>
+            <div class="content">      
+              <ul>
+                <li>Each team should have 3 members.</li>
+                <li>The picturist will have to pick a card which consist of a word or a phrase. The picturist can take 5 seconds to read and 30 seconds to draw and the teammates have to guess that word/phrase.</li>
+                <li>Two teams will compete against each other where each team will take alternate turns to draw.</li>
+                <li>The game consists of 3 rounds where each member of the team will take turns as the picturist. The winning team gets one point.</li>
+              <li>And the final round is a 1vs1 round where members of both the teams will be given the same card and draw at the same time.</li>
+              <li>The team who wins gets 2 points and the winning team of that round goes to the next round.</li>
+              </ul>           
+            </div>
+          </section>
+          <section>
+            <header>
+              <h2>Coordinators</h2>
+            </header>
+            <div class="content">
+              <p><strong>Faculty Coordinators</strong> <li></li></p>
+              
+              <p><strong>Student Coordinators</strong><ul> <li>S. Rahul Athreya  | 8197315309</li> <li>Shiva Nandan. N  |  8861458492</li>
+              </ul> </p>
+              <!-- Section -->
+                <form action="./register.html">
+                <ul class="actions">
+                  <li><input type="submit" value="Register" name="" class="button" /></li>
+                </ul>
+              </form>
+          </section>
+      </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="../scripts/jquery.scrolly.min.js"></script>
+      <script src="../scripts/browser.min.js"></script>
+      <script src="../scripts/breakpoints.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"></script>
+      <script src="../scripts/arcania.js"></script>
+  </body>
+</html>
