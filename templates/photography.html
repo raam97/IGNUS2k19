@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <link rel="icon" href="../img/favicon.png" sizes="16x16" type="image/png">
-    <link rel="stylesheet" href="../styles/arcania.css" />
+    <link rel="icon" href="{{url_for('static',filename ='img/favicon.png')}}" sizes="16x16" type="image/png">
+    <link rel="stylesheet" href="{{url_for('static',filename ='css/arcania.css')}}" />
   </head>
   <body class="is-preload">
 
@@ -219,7 +219,7 @@
               </ul>
             </header>
             <div class="content">
-              <span  class="image fill" data-position="center"><img src="../img/arcania.jpg" alt="" /></span>
+              <span  class="image fill" data-position="center"><img src="{{url_for('static',filename ='img/arcania.jpg')}}" alt="" /></span>
             </div>
           </section>
 
@@ -292,10 +292,10 @@
           </section>
       </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="../scripts/jquery.scrolly.min.js"></script>
-      <script src="../scripts/browser.min.js"></script>
-      <script src="../scripts/breakpoints.min.js"></script>
+      <script src="{{url_for('static',filename='js/jquery.scrolly.min.js')}}"></script>
+      <script src="{{url_for('static',filename='js/browser.min.js')}}"></script>
+      <script src="{{url_for('static',filename='js/breakpoints.min.js')}}"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript.util/0.12.12/javascript.util.min.js"></script>
-      <script src="../scripts/arcania.js"></script>
+      <script src="{{url_for('static',filename='js/arcania.js')}}"></script>
   </body>
 </html>

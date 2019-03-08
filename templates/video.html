@@ -5,10 +5,10 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Ignus-Video</title>
-		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="shortcut icon" href="{{url_for('static', filename='img/favicon.png')}}">
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-		<link rel="stylesheet" type="text/css" href="../styles/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="../styles/videocss.css" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='css/normalize.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='css/videocss.css')}}" />
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -22,13 +22,13 @@
 				<h1>IGNUS 2K19</h1>
 			</header><!-- /codrops-header -->
 			<div class="deco-stack">
-				<img class="deco-stack__img deco-stack__img--rotation-1" src="../img/boxpic1.jpg" alt="Picture 1" />
-				<img class="deco-stack__img deco-stack__img--rotation-2" src="../img/boxpic2.jpg" alt="Picture 2" />
-				<img class="deco-stack__img deco-stack__img--rotation-3" src="../img/boxpic3.jpg" alt="Picture 3" />
+				<img class="deco-stack__img deco-stack__img--rotation-1" src="{{url_for('static',filename ='img/boxpic1.jpg')}}" alt="Picture 1" />
+				<img class="deco-stack__img deco-stack__img--rotation-2" src="{{url_for('static',filename ='img/boxpic2.jpg')}}" alt="Picture 2" />
+				<img class="deco-stack__img deco-stack__img--rotation-3" src="{{url_for('static',filename ='img/boxpic3.jpg')}}" alt="Picture 3" />
 			</div>
 			<div class="video-wrap">
 				<div class="video-inner">
-					<video class="video-player" src="media/woods.mp4" poster="media/woods.jpg" preload="auto">
+					<video class="video-player" src="{{url_for('static',filename ='media/woods.mp4')}}" poster="{{url_for('static',filename ='media/woods.jpg')}}" preload="auto">
 					</video>
 					<button class="action action--close"><i class="fa fa-close"></i><span class="action__label action__label--hidden">Close preview</span></button>
 				</div> <!-- /video-inner -->
@@ -42,7 +42,7 @@
 				</button>
 			</div>
 		</div><!-- /container -->
-		<script src="../scripts/classie.js"></script>
-		<script src="../scripts/videojs.js"></script>
+		<script src="{{url_for('static',filename ='js/classie.js')}}"></script>
+		<script src="{{url_for('static',filename ='js/videojs.js')}}"></script>
 	</body>
 </html>
