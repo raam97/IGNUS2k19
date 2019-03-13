@@ -9,8 +9,9 @@
 	
 	<link rel="icon" href="{{url_for('static',filename ='img/favicon.png')}}" sizes="16x16" type="image/png">
 	<link href="https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../styles/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="../styles/gamingcss.css" />
+
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='css/normalize.css')}}" />
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='css/gamingcss.css')}}" />
 	<script>document.documentElement.className = 'js';</script>
 </head>
 
@@ -21,14 +22,14 @@
 			<h1 class="codrops-header__title" style="padding-left: 0%; font-size: 400%; padding-top: 5%; color: white;">Gaming</h1>
 			
 			<div class="intro">
-				<img class="intro__img" src="../img/ps.jpg" alt="main" style="margin-top: 3%;">
+				<img class="intro__img" src="{{url_for('static',filename ='img/ps.jpg')}}" alt="main" style="margin-top: 3%;">
 				<p class="intro__text" style="margin-top: 20%; color: white; font-size: 150%;margin-left: -3%;">Stop being a cheese weasel and come compete!</p>
 			</div>
 		</header>
 		<section class="grid">
 			<div class="grid__item">
 				<a class="grid__link" >
-					<img class="grid__img" src="../img/fifa.jpg" alt="Glasses 1" />
+					<img class="grid__img" src="{{url_for('static',filename ='img/fifa.jpg')}}" alt="Glasses 1" />
 					<h3 class="grid__item-name" style="color: #FE1676;">FIFA 2019</h3>
 					<p class="grid__item-desc" style="background-color: pink;">Come around, Play around & Kick Around.</p>
 
@@ -36,23 +37,16 @@
 			</div>
 			<div class="grid__item">
 				<a class="grid__link grid__link--offset grid__link--alt" href="#vison-item-2">
-					<img class="grid__img" src="../img/nfs.jpg" alt="Glasses 2" />
+					<img class="grid__img" src="{{url_for('static',filename ='img/nfs.jpg')}}" alt="Glasses 2" />
 					<h3 class="grid__item-name" style="color: #1695FE">Need for Speed</h3>
 					<p class="grid__item-desc" style="background-color: lightblue;">Come around, Play around & Race Around.</p>
 				</a>
 			</div>
 			<div class="grid__item grid__item--center">
 				<a class="grid__link grid__link--offset-neg" href="#vison-item-3">
-					<img class="grid__img" src="../img/cs.jpg" alt="Glasses 3" />
+					<img class="grid__img" src="{{url_for('static',filename ='img/cs.jpg')}}" alt="Glasses 3" />
 					<h3 class="grid__item-name" style="color: orange;">Counter Strike 1.6</h3>
 					<p class="grid__item-desc" style="background-color: #F19027;">Come around, Play around & Shoot Around.</p>
-				</a>
-			</div>
-			<div class="grid__item grid__item--center">
-				<a class="grid__link grid__link--offset" href="#vison-item-4">
-					<img class="grid__img" src="../img/wwe.jpg" alt="Glasses 4" />
-					<h3 class="grid__item-name" style="color: red;">WWE</h3>
-					<p class="grid__item-desc" style="background-color: #F5415B;">Come around, Play around & Punch Around.</p>
 				</a>
 			</div>
 			
@@ -114,6 +108,6 @@
 
 		
 	</main>
-	<script src="../scripts/gamingjs.js"></script>
+	<script src="{{url_for('static',filename ='js/gamingjs.js')}}"></script>
 </body>
 </html>
