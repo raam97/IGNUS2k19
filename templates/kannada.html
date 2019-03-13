@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Kannadakkagi Ondanu Otthi</title>
 		<link rel="shortcut icon" href="favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../styles/base.css" />
-		<link rel="stylesheet" type="text/css" href="../styles/kannadacss.css" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='css/base.css')}}" />
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename ='css/kannadacss.css')}}" />
 		<script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this page in a modern browser that supports CSS Variables.");</script>
 	</head>
 	<body class="demo-1">
@@ -122,8 +122,8 @@
 				</div>
 			</nav>
 		</main>
-		<script src="../scripts/demokannada.js"></script>
-		<script src="../scripts/anime.min.js"></script>
-		<script src="../scripts/menukannada.js"></script>
+		<script src="{{url_for('static',filename='js/demokannada.js')}}"></script>
+		<script src="{{url_for('static',filename='js/anime.min.js')}}"></script>
+		<script src="{{url_for('static',filename='js/menukannada.js')}}"></script>
 	</body>
 </html>
