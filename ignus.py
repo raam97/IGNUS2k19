@@ -19,8 +19,8 @@ name= ['GAMING','STAR OF IGNUS','LIP READ YOUR PARTNER','PUBG', 'PHOTOGRAPHY','T
  'MAD LIB THEATER', 'HOT WHEELS', 'SUSTAINERI', 'MAYA', 'DEVIL SEAGUE', 'BUZZ WIRE'
 	]
 
-photo = ['gam.jpg',
-'sti.jpg',
+photo = ['gaming.jpg',
+		'sti.jpg',
 		'lryp.jpg',
 		'pubg.jpg',
 		'pho.jpg',
