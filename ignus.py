@@ -1,13 +1,23 @@
 # [START imports]
-from flask import Flask, render_template, request , redirect 
+from flask import Flask, render_template, request , redirect ,flash
 # [END imports]
 from functools import wraps
-
+from flask_mail import Mail , Message
+import os
+mail = Mail()
 
 app = Flask(__name__)
 
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'ignus2k19toce@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Ignus19toce'
+
 app.secret_key = "!@#$%^&*()a-=afs;'';312$%^&*k-[;.sda,./][p;/'=-0989#$%^&0976678v$%^&*(fdsd21234266OJ^&UOKN4odsbd#$%^&*(sadg7(*&^%32b342gd']"
 
+mail.init_app(app)
 
 html = ['gaming','staroi','lipread','pubg','photography','terror','kannada',
  'pictionary','shortfilm','reta','arcania', 'clickndrun',
@@ -51,9 +61,23 @@ def test():
 def index():
     return  render_template("index.html")
 
-@app.route("/main")
+@app.route("/main" , methods=["GET","POST"])
 def main():
-    return render_template("main.html", zipped=zip([x for x in range(len(html))] , html , photo , name))
+    if request.method == "GET":
+        return render_template("main.html", zipped=zip([x for x in range(len(html))] , html , photo , name))
+    elif request.method== "POST":
+        contact_name = request.form["name"]
+        contact_email = request.form["email"]
+        contact_message = request.form["message"]
+        msg = Message("Message From the Website",
+                  sender='ignus2k19toce@gmail.com',
+                  recipients=['ignus2k19toce@gmail.com'])
+        msg.body ="""
+        From {0} : {1} 
+             {2}""".format(contact_name,contact_email,contact_message)
+        mail.send(msg)
+        flash("Thanks for contacting us")
+        return redirect(request.url)
 
 @app.route("/events/<string:event>")
 def events(event):
