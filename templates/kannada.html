@@ -18,13 +18,13 @@
 			<div id="content-1" class="content content--switch content--switch-current" style="background-image: url(../img/kannada.jpg); position: relative;">
 
 				<h2 class="content__title" style="text-align: center;">ಕನ್ನಡಕ್ಕಾಗಿ ಒಂದನ್ನು ಒತ್ತಿ</h2>
-				<div class="content__date" style="font-size: 120%; text-align: center;">Event which tests the knowledge you have  about kannada literature, history and its film industry.</div>
-				
+				<div class="content__date" style="font-size: 120%; text-align: center;"> “ನಮ್ಮ ನುಡಿಯೇ ಚಂದ, ನಮ್ಮ ಪದವೇ ಅಂದ” </div>
+				<div class="content__date" style="font-size: 120%; text-align: center;"> ಕನ್ನಡ ನೆಲದಲ್ಲಿ ಸುತ್ತೋಣ, ಕರುನಾಡ ಕಂಪನು ಹೀರೋಣ ಮುತ್ತಂತಿರುವ ಕನ್ನಡ ಅಕ್ಷರ ಪದಗಳ ಜೊತೆ ಆಡೋಣ ಶ್ರೀಗಂಧದ ನಾಡಿನ ಚಲನ ಚಿತ್ರಗಳ ಮನದುಂಬಿಕೊಳ್ಳೋಣ ದೇಶರಕ್ಷಕರ, ಸಮಾಜ ಚಿಂತಕರ ಗುರುತಿಸಿ ನಮಿಸೋಣ ಅವರ ಆಶೀರ್ವಾದ ಪಡೆಯುತ ಪರರಿಗೂ ಕನ್ನಡ ಕಲಿಸುತ ನಲಿಯೋಣ‌. </div>
 			</div>
 			<div id="content-2" class="content content--switch">
 				<h2 class="content__title">Venue & Date</h2>
-				<p style="font-size: 200%;">MCA Seminar Hall  or Dental Auditorium</p>
-				<p style="font-size: 200%;">21.03.2019</p>
+				<p style="font-size: 200%;">MCA Seminar Hall</p>
+				<p style="font-size: 200%;">22.03.2019</p>
 			</div>
 			<div id="content-3" class="content content--switch">
 				<h3 class="content__title">Student Co-ordinators</h3>
@@ -34,18 +34,24 @@
 			<div id="content-4" class="content content--switch">
 				<h3 class="content__title">Registration</h3>
 				<p class="content__text" style="font-size: 170%;">Registration fee is Rs 100/- per team.</p>
-				<input class="btn btn-success btn-lg" name="submit"  type="submit" value="Register"style="text-align: center; margin-left: 0;width: 200px; border-radius: 50px; ">
+
+				<a href="{{ url_for('register' ,event=register ) }}">
+						<input class="btn btn-success btn-lg" name="submit"  type="submit" value="Register"style="text-align: center; margin-left: 0;width: 200px; border-radius: 50px; ">
+				</a>
+
+				
 			</div>
 			<div id="content-5" class="content content--switch">
 				<h3 class="content__title">Faculty Co-ordinators</h3>
 				<p style="font-size: 200%;">Mr. Channappa Gowda</p>
 			</div>
 			<div id="content-6" class="content content--switch">
-				<h3 class="content__title">ನಮ್ಮ ನಿಯಮಗಳು</h3>
+				<h3 class="content__title">ನಿಯಮ ಮತ್ತು ನಿಯಂತ್ರಣಗಳು.</h3>
 				<ul style="font-size: 200%;">
-					<li>Two in a team.</li>
-					<li>Use of mobile and other electronic gadgets is not allowed.</li>
-					<li>There will be no change in the decision once decided by the judge.</li>
+					<li> ಒಂದು ತಂಡದಲ್ಲಿ ಇಬ್ಬರು ಸ್ಪರ್ಧಿಗಳು.</li>
+					<li>ಜಂಗಮವಾಣಿ ಅಥವಾ ಇತರೆ ಯಾವುದೇ ಅಂತರ್ಜಾಲ ಆಧಾರಿತ  ಯಂತ್ರಗಳನ್ನು ನಿಷೇಧಿಸಲಾಗಿದೆ.</li>
+					<li>ನ್ಯಾಯಾಧೀಶರ ನಿರ್ಣಯವೇ ಅಂತಿಮ.</li>
+					<li>ನಕಾರಾತ್ಮಕ ತಂತ್ರಗಳಿಗೆ ಅನುಮತಿ ಇಲ್ಲ.</li>
 					
 				</ul>
 			</div>

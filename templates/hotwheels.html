@@ -73,11 +73,9 @@
 							
 
 							<!-- Section -->
-								<form action="./register.html">
-								<ul class="actions">
-									<li><input type="submit" value="Register" name="" class="button primary" /></li>
-								</ul>
-							</form>
+							<a href="{{ url_for('register' ,event=register ) }}">
+								<input class="button primary" name="submit"  type="submit" value="Register">
+							</a>
 						
 					</section>
 

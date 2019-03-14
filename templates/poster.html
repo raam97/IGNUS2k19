@@ -374,7 +374,10 @@ a {
             <li>Nitin | +91 9141846995</li>
               <li>Mohit Bansal | +91 8431437690 </li>
           </ol> </p>
-          <a href="./register.html" class="rainbow-button" alt="Register" style="margin-left: 37%"></a>
+          <a href="{{ url_for('register' ,event=register ) }}">
+                <input class="button" name="submit"  type="submit" value="Register">
+              </a>
+          <a href="{{ url_for('register' ,event=register ) }}" class="rainbow-button" alt="Register" style="margin-left: 37%"></a>
           <br>
         </div>
     
