@@ -4,7 +4,14 @@ from flask import Flask, render_template, request , redirect ,flash ,url_for
 from functools import wraps
 from flask_mail import Mail , Message
 import os
-import sqlite3
+import sqlalchemy
+import logging
+
+db_user = "root"
+db_pass = "ignusdatabase"
+db_name = "ignus"
+cloud_sql_connection_name = "ignus2k19:asia-east1:ignusdatabase"
+
 mail = Mail()
 
 app = Flask(__name__)
@@ -19,10 +26,55 @@ app.config['MAIL_PASSWORD'] = 'Ignus19toce'
 app.secret_key = "!@#$%^&*()a-=afs;'';312$%^&*k-[;.sda,./][p;/'=-0989#$%^&0976678v$%^&*(fdsd21234266OJ^&UOKN4odsbd#$%^&*(sadg7(*&^%32b342gd']"
 
 mail.init_app(app)
+# [START cloud_sql_mysql_sqlalchemy_create]
+# The SQLAlchemy engine will help manage interactions, including automatically
+# managing a pool of connections to your database
+db = sqlalchemy.create_engine(
+    # Equivalent URL:
+    # mysql+pymysql://<db_user>:<db_pass>@/<db_name>?unix_socket=/cloudsql/<cloud_sql_instance_name>
+    sqlalchemy.engine.url.URL(
+        drivername='mysql+pymysql',
+        username=db_user,
+        password=db_pass,
+        database=db_name,
+        query={
+            'unix_socket': '/cloudsql/{}'.format(cloud_sql_connection_name)
+        }
+    ),
+    # ... Specify additional properties here.
+    # [START_EXCLUDE]
 
-def sqlconnection():
-    conn = sqlite3.connect("ignus.db")
-    return conn
+    # [START cloud_sql_mysql_sqlalchemy_limit]
+    # Pool size is the maximum number of permanent connections to keep.
+    pool_size=5,
+    # Temporarily exceeds the set pool_size if no connections are available.
+    max_overflow=2,
+    # The total number of concurrent connections for your application will be
+    # a total of pool_size and max_overflow.
+    # [END cloud_sql_mysql_sqlalchemy_limit]
+
+    # [START cloud_sql_mysql_sqlalchemy_backoff]
+    # SQLAlchemy automatically uses delays between failed connection attempts,
+    # but provides no arguments for configuration.
+    # [END cloud_sql_mysql_sqlalchemy_backoff]
+
+    # [START cloud_sql_mysql_sqlalchemy_timeout]
+    # 'pool_timeout' is the maximum number of seconds to wait when retrieving a
+    # new connection from the pool. After the specified amount of time, an
+    # exception will be thrown.
+    pool_timeout=30,  # 30 seconds
+    # [END cloud_sql_mysql_sqlalchemy_timeout]
+
+    # [START cloud_sql_mysql_sqlalchemy_lifetime]
+    # 'pool_recycle' is the maximum number of seconds a connection can persist.
+    # Connections that live longer than the specified amount of time will be
+    # reestablished
+    pool_recycle=1800,  # 30 minutes
+    # [END cloud_sql_mysql_sqlalchemy_lifetime]
+
+    # [END_EXCLUDE]
+)
+# [END cloud_sql_mysql_sqlalchemy_create
 
 html = ['gaming','staroi','lipread','pubg','photography','terror','kannada',
  'pictionary','shortfilm','reta','arcania', 'clickndrun',
@@ -60,6 +112,18 @@ photo = ['gaming.jpg',
 
 zippedName = dict(zip(html ,name))
 zippedPicture = dict(zip(html , photo))
+
+@app.before_first_request
+def create_tables():
+    # Create tables (if they don't already exist)
+    with db.connect() as conn:
+        conn.execute('''CREATE TABLE IF NOT EXISTS REGISTER(USER_NAME TEXT(50) NOT NULL ,
+                 EMAIL VARCHAR(50)  NOT NULL,
+                 COLLEGE VARCHAR(50),
+                MOBILE VARCHAR(50),
+                 EVENT VARCHAR(50))''' )
+
+
 @app.route("/test")
 def test():
     return "hello"
@@ -103,10 +167,22 @@ def register(event):
         user_email = request.form["email"]
         user_college = request.form["college"]
         user_phone = request.form["phone"]
-        conn = sqlconnection()
-        conn.execute('''INSERT INTO REGISTER(USER_NAME,EMAIL,COLLEGE,MOBILE,EVENT) VALUES (?,?,?,?,?)''',(user_name , user_email,user_college,user_phone, zippedName[event] ))
-        conn.commit()
-        conn.close()
+        stmt = sqlalchemy.text(
+        "INSERT INTO REGISTER (USER_NAME,EMAIL,COLLEGE,MOBILE,EVENT)"
+            " VALUES (:USER_NAME,:EMAIL,:COLLEGE,:MOBILE,:EVENT)")
+        try:
+        # Using a with statement ensures that the connection is always released
+        # back into the pool at the end of statement (even if an error occurs)
+            with db.connect() as conn:
+                conn.execute(stmt, USER_NAME=user_name ,EMAIL=user_email,COLLEGE=user_college,MOBILE=user_phone,EVENT=zippedName[event])
+        except Exception as e:
+            # If something goes wrong, handle the error in this section. This might
+            # involve retrying or adjusting parameters depending on the situation.
+            # [START_EXCLUDE]
+            logger.exception(e)  
+            return Response(status=500, response="Unable To register. Please try after some time" )
+        # [END_EXCLUDE]
+        # [END cloud_sql_mysql_sqlalchemy_connection]
         msg = Message("IGNUS 2K19",
                   sender='ignus2k19toce@gmail.com',
                   recipients=[user_email])
@@ -121,5 +197,14 @@ def register(event):
 @app.route("/code")
 def code():
     return render_template("code1.html")
+
+@app.route('/registrations', methods=['GET'])
+def registrations():
+    with db.connect() as conn:
+        # Execute the query and fetch all results
+        recent_votes = conn.execute("SELECT * FROM REGISTER").fetchall()
+        # Convert the results into a list of dicts representing votes
+        return render_template('output.html',data=recent_votes)
+
 if __name__ =="__main__":
     app.run(debug=True)
