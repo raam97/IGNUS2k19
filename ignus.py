@@ -64,6 +64,10 @@ zippedPicture = dict(zip(html , photo))
 def test():
     return "hello"
 
+@app.errorhandler(404)
+def handleerror(e):
+    return render_template("error.html")
+
 @app.route("/")
 def index():
     return  render_template("index.html")
@@ -113,5 +117,9 @@ def register(event):
             You will be Notified with future updates.""".format(zippedName[event] )
         mail.send(msg)
         return redirect(url_for('events',event=event))
+
+@app.route("/code")
+def code():
+    return render_template("code1.html")
 if __name__ =="__main__":
     app.run(debug=True)
