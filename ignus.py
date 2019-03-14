@@ -57,7 +57,6 @@ photo = ['gaming.jpg',
 		'devs.jpg',
 		'bzw.jpg',
 	]
-
 zippedName = dict(zip(html ,name))
 zippedPicture = dict(zip(html , photo))
 @app.route("/test")
@@ -81,7 +80,7 @@ def main():
         contact_email = request.form["email"]
         contact_message = request.form["message"]
         msg = Message("Message From the Website",
-                  sender='ignus2k19toce@gmail.com',
+                  sender=contact_email,
                   recipients=['ignus2k19toce@gmail.com'])
         msg.body ="""
         From {0} : {1} 
