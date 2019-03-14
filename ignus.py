@@ -86,6 +86,31 @@ name= ['GAMING','STAR OF IGNUS','LIP READ YOUR PARTNER','PUBG', 'PHOTOGRAPHY','T
  'MAD LIB THEATER', 'HOT WHEELS', 'SUSTAINERI', 'MAYA', 'DEVIL SEAGUE', 'BUZZ WIRE'
 	]
 
+regimg = [
+        'gaming.jpg',
+        'star of ignus.jpg',
+        'lipread.jpg',
+        'pubg.jpg',
+        'photography.jpg',
+        'terror hunt.jpg',
+        'kannada.png',
+        'pictionary.jpg',
+        'short film.jpg',
+        'surgical strike.jpg'
+        'arcania.jpg',
+        'click and run.jpg',
+        'best out of ewaste.jpg',
+        'poster presentation.jpg',        
+        'beg borrow steakl.jpg',
+        'sherlock.jpg',
+        'mad libs.jpg',
+        'hot wheels.jpg',
+        'sustaineri.jpg',
+        'maya.jpg',
+        'devil segue.png',
+        'buss wire.jpg',
+    ]
+
 photo = ['gaming.jpg',
 		'sti.jpg',
 		'lryp.jpg',
@@ -109,8 +134,9 @@ photo = ['gaming.jpg',
 		'devs.jpg',
 		'bzw.jpg',
 	]
+
 zippedName = dict(zip(html ,name))
-zippedPicture = dict(zip(html , photo))
+zippedPicture = dict(zip(html , regimg))
 
 @app.before_first_request
 def create_tables():
