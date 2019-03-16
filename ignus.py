@@ -83,8 +83,7 @@ html = ['gaming','staroi','lipread','pubg','photography','terror','kannada',
 name= ['GAMING','STAR OF IGNUS','LIP READ YOUR PARTNER','PUBG', 'PHOTOGRAPHY','TERROR HUNT',
  'KANNADA QUIZ','PICTIONARY','SHORTFILM','RETALITION - THE SURGICAL STRIKE','ARCANIA',
  'CLICK AND RUN','BEST OUT OF E-WASTE','POSTER PRESENTATION','BEG BORROW STEAL', 'OXFORD SHERLOCK',
- 'MAD LIB THEATER', 'HOT WHEELS', 'SUSTAINERI', 'MAYA', 'DEVIL SEAGUE', 'BUZZ WIRE'
-	]
+ 'MAD LIB THEATER', 'HOT WHEELS', 'SUSTAINERI', 'MAYA', 'DEVIL SEAGUE', 'BUZZ WIRE']
 
 regimg = [
         'gaming.jpg',
@@ -96,7 +95,7 @@ regimg = [
         'kannada.png',
         'pictionary.jpg',
         'short film.jpg',
-        'surgical strike.jpg'
+        'surgical strike.jpg',
         'arcania.jpg',
         'click and run.jpg',
         'best out of ewaste.jpg',
