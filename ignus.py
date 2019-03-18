@@ -74,7 +74,7 @@ db = sqlalchemy.create_engine(
 
     # [END_EXCLUDE]
 )
-# [END cloud_sql_mysql_sqlalchemy_create
+# [END cloud_sql_mysql_sqlalchemy_create '''
 
 html = ['gaming','staroi','lipread','pubg','photography','terror','kannada',
  'pictionary','shortfilm','reta','arcania', 'clickndrun',
@@ -146,7 +146,6 @@ def create_tables():
                  COLLEGE VARCHAR(50),
                 MOBILE VARCHAR(50),
                  EVENT VARCHAR(50))''' )
-
 
 @app.route("/test")
 def test():
@@ -229,6 +228,10 @@ def registrations():
         recent_votes = conn.execute("SELECT * FROM REGISTER").fetchall()
         # Convert the results into a list of dicts representing votes
         return render_template('output.html',data=recent_votes)
+        
+@app.route("/video")
+def video():
+    return render_template("video.html")
 
 if __name__ =="__main__":
     app.run(debug=True)

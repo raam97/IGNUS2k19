@@ -17,18 +17,18 @@
 		<div class="container">
 			<header class="codrops-header">
 
-					<a class="codrops-icon codrops-icon--prev" href="main.html" title="Take Me To The Show"><span>Next</span></a>
+					<a class="codrops-icon codrops-icon--prev" href="{{url_for('main')}}" title="Take Me To The Show"><span>Next</span></a>
 
 				<h1>IGNUS 2K19</h1>
 			</header><!-- /codrops-header -->
 			<div class="deco-stack">
-				<img class="deco-stack__img deco-stack__img--rotation-1" src="{{url_for('static',filename ='img/boxpic1.jpg')}}" alt="Picture 1" />
-				<img class="deco-stack__img deco-stack__img--rotation-2" src="{{url_for('static',filename ='img/boxpic2.jpg')}}" alt="Picture 2" />
-				<img class="deco-stack__img deco-stack__img--rotation-3" src="{{url_for('static',filename ='img/boxpic3.jpg')}}" alt="Picture 3" />
+				<img class="deco-stack__img deco-stack__img--rotation-1" src="{{url_for('static',filename ='img/pubg.jpg')}}" alt="Picture 1" />
+				<img class="deco-stack__img deco-stack__img--rotation-2" src="{{url_for('static',filename ='img/hotw.jpg')}}" alt="Picture 2" />
+				<img class="deco-stack__img deco-stack__img--rotation-3" src="{{url_for('static',filename ='img/nfs.jpg')}}" alt="Picture 3" />
 			</div>
 			<div class="video-wrap">
 				<div class="video-inner">
-					<video class="video-player" src="{{url_for('static',filename ='media/trailer.mp4')}}" poster="{{url_for('static',filename ='media/woods.jpg')}}" preload="auto">
+					<video class="video-player" src="{{url_for('static',filename ='media/trailer.mp4')}}" poster="{{url_for('static',filename ='media/woods.jpg')}}" >
 					</video>
 					<button class="action action--close"><i class="fa fa-close"></i><span class="action__label action__label--hidden">Close preview</span></button>
 				</div> <!-- /video-inner -->
